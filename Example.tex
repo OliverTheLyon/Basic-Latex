@@ -1,0 +1,91 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+%This is the package helps with math matrices
+\usepackage{amsmath}
+
+%This is used for images
+\usepackage{graphicx}
+
+\title{Example Document}
+\author{Oliver Lyon }
+\date{December 2017}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+    This is an example of how I create a Latex Document.
+
+\section{New Section}
+    We can create new section like this.
+    \subsection{New Subsection}
+        We can see that\\
+        the slash slash cmd starts a new line. Otherwise if we write a longer sentence it will automatically wraps around and the edge of the page.
+        If we start a new line int the code it will not start on a new line.\cite{ME} %this is the fast citation it's pretty awesome
+
+        If we put one blank line in the code in between we will get a new paragraph with indentation.
+    \subsection{Basic Equations}
+        When it comes to Equation representations Latex is the best! We can use the begin {equation} cmd if we want a labeled equation,
+        \begin{equation}
+            \alpha = 2\beta + \frac{top}{bottom} 
+        \end{equation}
+        Or we can ask to not have the equation labeled begin {equation*},
+        \begin{equation*}
+            \gamma = \frac{top}{\frac{middle}{bottom}}
+        \end{equation*}
+        We can even do Matrices cleanly,
+        \[ 
+        \left( \begin{array}{cc}
+            u_{1}  \\ %we brake the lines to say next element down
+            \dot{u}_{1}  \\
+            u_{2}  \\
+            \dot{u}_{2}  \\
+        \end{array} \right) 
+        = 
+        \left( \begin{array}{cc}
+            y_1  \\
+            y_2  \\
+            y_3  \\
+            y_4  \\
+        \end{array} \right)
+        \]
+        \[
+        \left( \begin{array}{cc} %The number of c's helps latex know how many elemnets across to give us
+            u_{1} & y\\ %we brake the lines to say next element down
+            \dot{u}_{1} & y\\ %this is the same notation as for tables 
+            u_{2} & y\\
+            \dot{u}_{2} & y\\
+        \end{array} \right) 
+        \]
+        An import note if you try to use math notation outside of the equation Latex gets angry. You need to wrap it in Dollar signs.
+        
+
+\section{Display Code}
+    To display code I find it best to use a package and an example to display it that could be found online. The other option is to use begin verbatim.
+    \begin{verbatim}
+Everything inside verbatim will print EXACTLY the way it is written even if it goes off the page.
+    \end{verbatim}
+    \begin{verbatim}
+        Also best part is we can use latex cmd characters $$$
+        \\\\\\\ also % make comments
+    \end{verbatim}
+\section{Images}
+    The best guide to images is the one provided by share tex but you can control the size of the images as you put it in the image.
+    
+    \includegraphics[width=10cm, height=7cm]{RK3_region_of_stablility.png}
+    
+    images are also impacted by the paragraph blank lines. LONGER writing to demonstrate the paragraph issues
+    \includegraphics[width=10cm, height=3cm]{RK3_region_of_stablility.png}
+
+\section{Conclusion} 
+    This is a very basic introduction to latex I hope this helps!
+    
+%it also makes bibliographies simple
+\begin{thebibliography}{1}
+
+    \bibitem{ME} {\sc Name}, {\em Title}, Credits
+
+\end{thebibliography}
+
+\end{document}
